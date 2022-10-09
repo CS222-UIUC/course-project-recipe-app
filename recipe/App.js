@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, div } from 'react-native';
+import { Component } from 'react';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
@@ -25,64 +26,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Button
-        title="Home"
-        onPress={() =>
-          navigation.navigate('Home')
-        }
-      />
-      <Button
-        title="Grocery"
-        onPress={() =>
-          navigation.navigate('Grocery')
-        }
-      />
-      <Button
-        title="Pantry"
-        onPress={() =>
-          navigation.navigate('Pantry')
-        }
-      />
-      <Button
-        title="Settings"
-        onPress={() =>
-          navigation.navigate('Settings')
-        }
-      />
+      {menuBar(navigation)}
       <Text>home</Text>
     </View>
   );
 };
 const SettingsScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Button
-        title="Home"
-        onPress={() =>
-          navigation.navigate('Home')
-        }
-      />
-      <Button
-        title="Grocery"
-        onPress={() =>
-          navigation.navigate('Grocery')
-        }
-      />
-      <Button
-        title="Pantry"
-        onPress={() =>
-          navigation.navigate('Pantry')
-        }
-      />
-      <Button
-        title="Settings"
-        onPress={() =>
-          navigation.navigate('Settings')
-        }
-      />
+    <View >
+      
+      {menuBar(navigation)}
+      
       <Text>Settings</Text>
     </View>
   );
@@ -90,30 +48,7 @@ const SettingsScreen = ({ navigation }) => {
 const GroceryScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Button
-        title="Home"
-        onPress={() =>
-          navigation.navigate('Home')
-        }
-      />
-      <Button
-        title="Grocery"
-        onPress={() =>
-          navigation.navigate('Grocery')
-        }
-      />
-      <Button
-        title="Pantry"
-        onPress={() =>
-          navigation.navigate('Pantry')
-        }
-      />
-      <Button
-        title="Settings"
-        onPress={() =>
-          navigation.navigate('Settings')
-        }
-      />
+     {menuBar(navigation)}
       <Text>Grocery</Text>
     </View>
   );
@@ -121,6 +56,17 @@ const GroceryScreen = ({ navigation }) => {
 const PantryScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
+      {menuBar(navigation)}
+      <Text>Pantry</Text>
+    </View>
+    
+  );
+ 
+  
+};
+const menuBar =  navigation  => {
+  return (
+    <View>
       <Button
         title="Home"
         onPress={() =>
@@ -145,8 +91,10 @@ const PantryScreen = ({ navigation }) => {
           navigation.navigate('Settings')
         }
       />
-      <Text>Pantry</Text>
     </View>
-  );
+  )
+  ;
+ 
+  
 };
 export default App

@@ -1,5 +1,5 @@
 
-import { menuBar} from "./menubar.js";
+import { menuBar} from "./screens/menubar.js";
 import {  Text, View } from 'react-native';
 const GroceryScreen = ({ navigation }) => {
     return (

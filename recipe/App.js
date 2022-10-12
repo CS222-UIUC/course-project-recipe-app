@@ -3,6 +3,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, Text, View, Button, div } from 'react-native';
 import { Component } from 'react';
+import { PantryScreen } from './PantryScreen.js';
+import { GroceryScreen } from './GroceryScreen.js';
+import { HomeScreen } from './HomeScreen.js';
+import { SettingsScreen } from './SettingsScreen.js';
+
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
@@ -27,74 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-const HomeScreen = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      {menuBar(navigation)}
-      <Text>home</Text>
-    </View>
-  );
-};
-const SettingsScreen = ({ navigation }) => {
-  return (
-    <View >
-      
-      {menuBar(navigation)}
-      
-      <Text>Settings</Text>
-    </View>
-  );
-};
-const GroceryScreen = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-     {menuBar(navigation)}
-      <Text>Grocery</Text>
-    </View>
-  );
-};
-const PantryScreen = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      {menuBar(navigation)}
-      <Text>Pantry</Text>
-    </View>
-    
-  );
- 
-  
-};
-const menuBar =  navigation  => {
-  return (
-    <View>
-      <Button
-        title="Home"
-        onPress={() =>
-          navigation.navigate('Home')
-        }
-      />
-      <Button
-        title="Grocery"
-        onPress={() =>
-          navigation.navigate('Grocery')
-        }
-      />
-      <Button
-        title="Pantry"
-        onPress={() =>
-          navigation.navigate('Pantry')
-        }
-      />
-      <Button
-        title="Settings"
-        onPress={() =>
-          navigation.navigate('Settings')
-        }
-      />
-    </View>
-  )
-  ;
- 
-  
-};
 export default App

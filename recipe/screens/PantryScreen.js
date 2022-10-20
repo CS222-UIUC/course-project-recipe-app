@@ -1,4 +1,4 @@
-import { menuBar} from "./screens/menubar.js";
+import { menuBar} from "./menubar.js";
 import {  Text, View } from 'react-native';
 import PantryAndGroceryButton from "../components/PantryAndGroceryButton.js";
 const PantryScreen = ({ navigation }) => {

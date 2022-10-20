@@ -1,6 +1,6 @@
-import { menuBar} from "./screens/menubar.js";
+import { menuBar} from "./menubar.js";
 import {  Text, View } from 'react-native';
-import { styles } from './App.js'
+//import { styles } from '../components/StyleSheet.js'
 const SettingsScreen = ({ navigation }) => {
     return (
       <View>
@@ -9,5 +9,7 @@ const SettingsScreen = ({ navigation }) => {
       </View>
     );
   };
+
+  
   
   export {SettingsScreen};

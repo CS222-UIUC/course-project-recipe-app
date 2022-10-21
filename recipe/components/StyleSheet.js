@@ -6,13 +6,15 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
-    roundButton1: {
-      width: 100,
-      height: 100,
+    roundButton: {
+      width: 60,
+      height: 60,
       justifyContent: 'center',
       alignItems: 'center',
       padding: 10,
-      borderRadius: 100,
+      borderRadius: 50,
       backgroundColor: '#fff',
     },
   });
+
+  export {styles}

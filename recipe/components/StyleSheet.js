@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+      padding: 100,
     },
     roundButton: {
       width: 60,
@@ -22,8 +23,19 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       padding: 10,
       borderRadius: 50,
-      backgroundColor: '#fff',
+      backgroundColor: 'gray',
     },
+    settingsStyle: {
+      width: 300,
+      height: 50,
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 10,
+      borderRadius: 28,
+      backgroundColor: '#407ee3',
+    },
+
+
   });
 
   export {styles}

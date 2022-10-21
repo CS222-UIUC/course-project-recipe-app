@@ -1,9 +1,9 @@
 import { View, Text } from 'react-native';
-// this button could be used for our main page when naviagting
-// to the specific recipe types
+import {styles} from "./StyleSheet.js";
+//This button can be used when the person wants to change their profile picture
 function ProfilePic({children}) {
     return (
-    <View>
+    <View style={styles.profilePic}>
         <Text>{children}</Text>
     </View>
     );

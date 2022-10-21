@@ -1,9 +1,10 @@
 import { menuBar} from "./menubar.js";
 import {  Text, View } from 'react-native';
+import { styles } from "../components/StyleSheet.js";
 import PantryAndGroceryButton from "../components/PantryAndGroceryButton.js";
 const PantryScreen = ({ navigation }) => {
     return (
-      <View >
+      <View style={styles.container}>
         <PantryAndGroceryButton>Input</PantryAndGroceryButton>
         <PantryAndGroceryButton>Edit</PantryAndGroceryButton>
         {menuBar(navigation)}

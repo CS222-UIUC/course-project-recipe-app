@@ -34,6 +34,19 @@ const styles = StyleSheet.create({
       borderRadius: 28,
       backgroundColor: '#407ee3',
     },
+    containerProfile: {
+      //flex: 2,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      fontSize: 20,
+      fontWeight: "bold"
+      //justifyContent: 'center',
+      //padding: 100,
+    },
+    titleText: {
+      fontSize: 20,
+      fontWeight: "bold"
+    },
 
 
   });

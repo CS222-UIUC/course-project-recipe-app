@@ -5,7 +5,7 @@ import { styles } from '../components/StyleSheet.js'
 import SettingsButton from "../components/SettingsButton.js";
 const SettingsScreen = ({ navigation }) => {
     return (
-      <View style={styles.container}>
+      <View>
         <View style={styles.containerProfile}>
           <Image
             style={{width: 100, height: 100, borderRadius: 50}}
@@ -13,13 +13,16 @@ const SettingsScreen = ({ navigation }) => {
           />
           <Text style ={styles.titleText}>Mark Wahlberg</Text>
         </View>
+        <View style={styles.containerProfile}>
+          <View style={styles.space} />
           <SettingsButton>Settings Option 1</SettingsButton>
-          <Text> </Text>
+          <View style={styles.space}/>
           <SettingsButton>Settings Option 2</SettingsButton>
-          <Text> </Text>
+          <View style={styles.space} />
           <SettingsButton>Settings Option 3</SettingsButton>
-          <Text> </Text>
+          <View style={styles.space} />
           <SettingsButton>Settings Option 4</SettingsButton>
+        </View>
           {menuBar(navigation)}
       </View>
     );

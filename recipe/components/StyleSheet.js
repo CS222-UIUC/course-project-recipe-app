@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       padding: 10,
-      borderRadius: 28,
-      backgroundColor: '#407ee3',
+      borderRadius: 20,
+      backgroundColor: '#3397f5',
     },
     containerProfile: {
       //flex: 2,
@@ -47,7 +47,10 @@ const styles = StyleSheet.create({
       fontSize: 20,
       fontWeight: "bold"
     },
-
+    space: {
+      width:20,
+      height: 20,
+    },
 
   });
 

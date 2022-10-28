@@ -1,0 +1,25 @@
+<html lang="en">
+  <%- include('./partials/head.ejs') %> 
+<body>
+
+  <%- include('./partials/nav.ejs') %> 
+
+  <div class="blogs content">
+    <h2>All Recipes</h2>
+
+    <% if (recipes.length > 0) { %>
+      <% recipes.forEach(recipe => { %> 
+        <h3 class="title"> <%= recipe.title %> </h3>
+        <p class="snippet"> <%= recipe.snippet %> </p>
+      <% }) %>
+    <% } else { %>
+      <p>There are no recipes to display</p>
+    <% } %>
+
+
+  </div>
+  
+  <%- include('./partials/footer.ejs') %> 
+
+</body>
+</html>

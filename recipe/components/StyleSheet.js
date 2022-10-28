@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       padding: 100,
+      //margin: 16,
     },
     roundButton: {
       width: 60,
@@ -50,6 +51,14 @@ const styles = StyleSheet.create({
     space: {
       width:20,
       height: 20,
+    },
+    featuredStyle: {
+      backgroundColor: '#3397f5',
+      alignItems: 'center',
+      width: 300,
+      height: 200,
+      borderRadius: 20,
+      justifyContent: 'center',
     },
 
   });

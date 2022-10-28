@@ -15,9 +15,9 @@ const SettingsScreen = ({ navigation }) => {
         </View>
         <View style={styles.containerProfile}>
           <View style={styles.space} />
-          <SettingsButton>Settings Option 1</SettingsButton>
+          <SettingsButton>Notifications</SettingsButton>
           <View style={styles.space}/>
-          <SettingsButton>Settings Option 2</SettingsButton>
+          <SettingsButton>Location</SettingsButton>
           <View style={styles.space} />
           <SettingsButton>Settings Option 3</SettingsButton>
           <View style={styles.space} />

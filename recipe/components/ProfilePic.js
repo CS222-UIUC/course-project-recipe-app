@@ -4,7 +4,11 @@ import {styles} from "./StyleSheet.js";
 function ProfilePic({children}) {
     return (
     <View style={styles.profilePic}>
-        <Text>{children}</Text>
+        <Pressable>
+            <View>
+                <Text style ={styles.titleText}>{children}</Text>
+            </View>
+        </Pressable>
     </View>
     );
 }

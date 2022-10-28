@@ -7,6 +7,9 @@ import { PantryScreen } from './screens/PantryScreen.js';
 import { GroceryScreen } from './screens/GroceryScreen.js';
 import { HomeScreen } from './screens/HomeScreen.js';
 import { SettingsScreen } from './screens/SettingsScreen.js';
+import FeaturedMealsOverviewScreen from './screens/FeaturedMealsOverviewScreen.js';
+import MealPrepScreen from './screens/MealPrepScreen.js';
+import NormalRecipeScreen from './screens/NormalRecipeScreen.js';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -17,7 +20,10 @@ const App = () => {
          <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Grocery" component={GroceryScreen} />
          <Stack.Screen name="Pantry" component={PantryScreen} /> 
-          <Stack.Screen name="Settings" component={SettingsScreen} /> 
+          <Stack.Screen name="Settings" component={SettingsScreen} />
+          <Stack.Screen name="Featured" component={FeaturedMealsOverviewScreen} /> 
+          <Stack.Screen name="Prep" component={MealPrepScreen} />
+          <Stack.Screen name="Normal" component={NormalRecipeScreen} />
         </Stack.Navigator>
       
     </NavigationContainer>

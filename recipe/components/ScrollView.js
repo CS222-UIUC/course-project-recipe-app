@@ -3,14 +3,23 @@ import { View, Text, ScrollView } from 'react-native';
 import {styles} from "./StyleSheet.js";
 
 
-function ScrollView({items}) {
+function Scroller({items}) {
+    const[listItems, setList] = useState([
+        { listItems: 'test1', key: '1'},
+        { listItems: 'test2', key: '2'},
+        { listItems: 'test1', key: '3'},
+        { listItems: 'test1', key: '4'},
+        { listItems: 'test1', key: '5'},
+        { listItems: 'test1', key: '6'},
+        { listItems: 'test1', key: '7'},
+      ]);
     return (
-        <View> 
+        <View style = {styles.scrollview}> 
             <ScrollView> 
-                { items.map((item) => {
+                { listItems.map((item) => {
                     return (
-                        <View>
-                            <Text>(item.name)</Text>
+                        <View key={item.key}>
+                            <Text >{item.listItems}</Text>
                         </View>
                     )
                 })}
@@ -19,7 +28,7 @@ function ScrollView({items}) {
         </View>
     );
 }
-export default ScrollView;
+export default Scroller;
 
 
 

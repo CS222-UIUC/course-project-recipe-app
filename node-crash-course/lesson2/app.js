@@ -44,9 +44,9 @@ app.get('/about', (req, res) => {
 
 app.get('/add-recipe', (req, res) => {
   const recipe = new Recipe({
-    title: "Buckwheat Tabboulah",
-    time: 30,
-    ingredients: ["Buckwheat", "Vegetarian", "Carrots", "Onion"]
+    title: "Spanish Chickpeas",
+    time: 45,
+    ingredients: ["Chickpeas", "Flour", "Yogurt", "Onion", "Eggs"]
   })
   recipe.save()
       .then((result) => {
@@ -72,30 +72,6 @@ app.get('/add-user', (req, res) => {
       });
 })
 
-app.get('/test-recipe', async (req, res) => {
-
-  const user = await User.findById('635038320950a622ca6b333c');
-  var ingredients = user.ingredients;
-  compare = (a1, a2) => a1.reduce((a, c) => a + a2.includes(c), 0);
-  var goodRecipes = [];
-  const recipes = await Recipe.find();
-  recipes.forEach(r => {
-    if (compare(ingredients, r.ingredients) > 0) {
-          goodRecipes.push(r.title);
-        }
-  })
-    User.updateOne(
-          { _id: ObjectId("635038320950a622ca6b333c") },
-          { $set: { title: "Patrick Cunningham", recipes: goodRecipes } }
-    ).then(result => {
-      console.log(result);
-      res.send(goodRecipes);
-    }).catch(err => {
-      console.log(err);
-    })
-  
-})
-
 app.get('/recipe-home', (req, res) => {
   Recipe.find()
     .then((result) => {
@@ -107,47 +83,59 @@ app.get('/recipe-home', (req, res) => {
 });
 
 app.get('/user-recipes', async (req, res) => {
-  const user = await User.findById('635038320950a622ca6b333c');
+  const user = await User.findById('63626cab767cc0e556117add');
   console.log(user.title);
   res.render('user-home', { title: 'User Recipes', user: user });
 });
 
 app.get('/pantry', async (req, res) => {
-  const user = await User.findById('635038320950a622ca6b333c');
-  console.log(user.title);
+  const user = await User.findById('63626cab767cc0e556117add');
   res.render('pantry', { title: 'Pantry', user: user });
 });
 
 async function updateRecipes() {
 
-  const user = await User.findById('635038320950a622ca6b333c');
+  const user = await User.findById('63626cab767cc0e556117add');
   var ingredients = user.ingredients;
+
+  ingredients = ingredients.map(element => {
+      return element.toUpperCase();
+  });
+  
   compare = (a1, a2) => a1.reduce((a, c) => a + a2.includes(c), 0);
   var goodRecipes = [];
+
   const recipes = await Recipe.find();
   recipes.forEach(r => {
-    if (compare(ingredients, r.ingredients) > 0) {
-          goodRecipes.push(r.title);
+
+    const rIngredients = r.ingredients.map(element => {
+      return element.toUpperCase();
+    });
+
+    if (compare(ingredients, rIngredients) > 0) {
+      console.log(r.title);
+          goodRecipes.push([r.title, compare(ingredients, rIngredients)]);
         }
   })
-    User.updateOne(
-          { _id: ObjectId("635038320950a622ca6b333c") },
-          { $set: { title: "Patrick Cunningham", recipes: goodRecipes } }
-    ).then(result => {
-      console.log(result);
-    }).catch(err => {
-      console.log(err);
-    })
-  
+
+  goodRecipes.sort(function(a, b){return b[1] - a[1]});
+  User.updateOne(
+        { _id: ObjectId("63626cab767cc0e556117add") },
+        { $set: { title: "Patrick Cunningham", recipes: goodRecipes } }
+  ).then(result => {
+    console.log(result);
+  }).catch(err => {
+    console.log(err);
+  })
 }
 
 app.post('/pantry', async (req, res) => {
   const newIngredient = req.body.title;
-  const user = await User.findById('635038320950a622ca6b333c');
+  const user = await User.findById('63626cab767cc0e556117add');
   var userIngredients = user.ingredients;
   userIngredients.push(newIngredient);
   User.updateOne(
-          { _id: ObjectId('635038320950a622ca6b333c') },
+          { _id: ObjectId('63626cab767cc0e556117add') },
           { $set: { ingredients: userIngredients } }
   ).then(result => {
       updateRecipes();
@@ -164,14 +152,14 @@ app.get('/delete/pantry', (req, res) => {
 app.post('/delete/pantry', async (req, res) => {
   const deleteIngredient = req.body.title;
     console.log(req.body);
-    const user = await User.findById('635038320950a622ca6b333c');
+    const user = await User.findById('63626cab767cc0e556117add');
     var userIngredients = user.ingredients;
     const index = userIngredients.indexOf(deleteIngredient);
     if (index > -1) {
       userIngredients.splice(index, 1); 
     }
     User.updateOne(
-            { _id: ObjectId("635038320950a622ca6b333c") },
+            { _id: ObjectId("63626cab767cc0e556117add") },
             { $set: { ingredients: userIngredients } }
     ).then(result => {
         updateRecipes();

@@ -8,7 +8,7 @@
     <h2>All Recipes</h2>
     <% if (typeof user !== 'undefined') { %>
       <% user.recipes.forEach(recipe => { %> 
-        <h3 class="title"> <%= recipe %> </h3>
+        <h3 class="title"> <%= recipe[0] %>  <%= recipe[1] %></h3>
       <% }) %>
     <% } else { %>
       <h3 class="title"> <%= user.title %> </h3>

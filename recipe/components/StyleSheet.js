@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       padding: 10,
       borderRadius: 50,
-      backgroundColor: '#fff',
+      backgroundColor: '#3397f5',
     },
     profilePic: {
       width: 100,
@@ -59,6 +59,15 @@ const styles = StyleSheet.create({
       height: 200,
       borderRadius: 20,
       justifyContent: 'center',
+    },
+    containerHorizontal: {
+      flex: 1,
+      backgroundColor: '#fff',
+      flexDirection: 'row',
+      alignItems: 'center',
+      //justifyContent: 'center',
+      padding: 100,
+      //margin: 16,
     },
 
   });

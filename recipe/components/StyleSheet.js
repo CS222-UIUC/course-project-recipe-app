@@ -17,6 +17,12 @@ const styles = StyleSheet.create({
       borderRadius: 50,
       backgroundColor: '#3397f5',
     },
+    scrollview: {
+      borderRadius: 50,
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      fontSize: 30
+    },
     profilePic: {
       width: 100,
       height: 100,

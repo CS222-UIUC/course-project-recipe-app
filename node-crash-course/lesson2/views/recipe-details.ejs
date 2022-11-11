@@ -1,0 +1,26 @@
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <%- include("./partials/nav.ejs") %>
+
+    <div class="details content">
+      <h2><%= recipe.title %></h2>
+      <h3>Prep Time: <%= recipe.time %> minutes</h3>
+      <h3>Ingredients:</h3>
+      <% if (typeof recipe !== 'undefined') { %>
+        <% recipe.ingredients.forEach(ingredient => { %> 
+          <li class="title"> <%= ingredient %></li>
+        <% }) %>
+      <% } else { %>
+        <h3 class="title"> <%= user.title %> </h3>
+        <h2 class="title"> <%= user.length %> </h2>
+        
+        <p>There are no users to display</p>
+      <% } %>
+      <h3>	&nbsp;	&nbsp;	&nbsp;</h3>
+    <a href="">Link</a>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>

@@ -65,7 +65,14 @@ const styles = StyleSheet.create({
       height: 200,
       borderRadius: 20,
       justifyContent: 'center',
-    },
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#777',
+    padding: 8,
+    margin: 10,
+    width: 200,
+    }
 
   });
 

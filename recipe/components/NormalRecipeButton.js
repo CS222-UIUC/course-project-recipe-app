@@ -6,7 +6,7 @@ function NormalRecipeButton({children, onPress}) {
     return (
     <View style={styles.settingsStyle}>
         <Pressable
-        onPress={onPress}
+                onPress={onPress}
         >
             <View>
                 <Text style ={styles.titleText}>Normal Recipes</Text>

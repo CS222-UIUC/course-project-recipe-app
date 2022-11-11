@@ -20,7 +20,15 @@
       <h2 class="title"> <%= user.length %> </h2>
       <p>There are no users to display</p>
     <% } %>
+    
   </div>
+  <form action="/scan" method="POST">
+        <input type="hidden">
+        <a href="http://localhost:8888/notebooks/Untitled.ipynb?kernel_name=python3">
+          <button>Scan</button>
+        </a>
+  </form>
+  
   <div class="create-blog content">
     <form action="/pantry" method="POST">
       <label for="title">Ingredient:</label>

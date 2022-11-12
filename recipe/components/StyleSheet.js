@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native';
+import { Dimensions } from 'react-native'
 const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: 100,
+      
       //margin: 16,
     },
     roundButton: {
@@ -75,6 +76,31 @@ const styles = StyleSheet.create({
       padding: 100,
       //margin: 16,
     },
+    menu: {
+      flex: 1,
+      flexDirection: 'row',
+      position: 'absolute',
+      justifyContent: 'center',
+      bottom : 0,
+      height: 110,
+      width:Dimensions.get('window').width,
+      backgroundColor: '#3397f5'
+      
+      
+    },
+    menubutton: {
+      backgroundColor: '#ffffff',
+      height: 75,
+      width: 75,
+      margin:10,
+      borderRadius:10,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    tinyLogo: {
+      width: 65,
+      height: 65,
+    }
 
   });
 

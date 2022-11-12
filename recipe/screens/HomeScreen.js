@@ -25,6 +25,7 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.space} />
         <MealPrepButton onPress={() =>
             navigation.navigate('Prep')} />
+        <View style={styles.Extraspace} />
         {menuBar(navigation)}
       </View>
       

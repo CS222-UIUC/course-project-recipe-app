@@ -11,15 +11,19 @@ import react, {useState} from 'react';
 const PantryScreen = ({ navigation }) => {
     const [searchText, setSearchText] = useState("");
     return (
-      <View style={styles.container}>
+<View style={styles.container}>
         <View style={styles.containerHorizontal}>
-          <InputButton></InputButton>
-          <View style={styles.space} />
-          <PantryEditButton></PantryEditButton>
-          <View style={styles.space} />
-          <ScanButton></ScanButton>
+        <InputButton></InputButton>
+        <View style={styles.space}/>
+        <PantryEditButton></PantryEditButton>
+        <View style={styles.space}/>
+        <ScanButton></ScanButton>
+        <View style={styles.space}/>
         </View>
+        <View style={{height: 40}} />
         <SearchBar searchText={searchText} setSearchText = {setSearchText}/>
+        <View style={{height: 60}} />
+        <Scroller></Scroller>
         {menuBar(navigation)}
       </View>
     );

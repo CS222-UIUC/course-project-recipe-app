@@ -8,8 +8,10 @@ import EditButton from "../components/GroceryPageComponents/EditButton.js";
 import ShareButton from "../components/GroceryPageComponents/ShareButton.js";
 import ExportButton from "../components/GroceryPageComponents/ExportButton.js";
 import Scroller from "../components/ScrollView.js";
+import SearchBar from "../components/PantryPageComponents/SearchBar.js";
+import react, {useState} from 'react';
 const GroceryScreen = ({ navigation }) => {
-    
+  const [searchText, setSearchText] = useState("");
     return (
       <View style={styles.container}>
         <View style={styles.containerHorizontal}>
@@ -21,9 +23,11 @@ const GroceryScreen = ({ navigation }) => {
         <View style={styles.space}/>
         <ExportButton></ExportButton>
         </View>
+        <View style={{height: 40}} />
+        <SearchBar searchText={searchText} setSearchText = {setSearchText}/>
+        <View style={{height: 60}} />
         <Scroller></Scroller>
         {menuBar(navigation)}
-        <Text>Grocery</Text> 
       </View>
 
     );

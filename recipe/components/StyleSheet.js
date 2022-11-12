@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { Dimensions } from 'react-native'
 const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -6,6 +7,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       padding: 140,
+      
       //margin: 16,
     },
     buttonPressed: {
@@ -61,6 +63,14 @@ const styles = StyleSheet.create({
       width:20,
       height: 20,
     },
+    Extraspace: {
+      width:20,
+      height: 170,
+    },
+    space2: {
+      width: 20,
+      height: 55,
+    },
     featuredStyle: {
       backgroundColor: '#3397f5',
       alignItems: 'center',
@@ -79,7 +89,7 @@ const styles = StyleSheet.create({
     },
     containerSearch:{
       margin: 10,
-
+      width: 270,
     },
     input: {
       backgroundColor: '#fff',
@@ -87,6 +97,38 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       color: "#000",
       borderWidth: 1,
+    },
+    menu: {
+      flex: 1,
+      flexDirection: 'row',
+      position: 'absolute',
+      justifyContent: 'center',
+      bottom : 0,
+      height: 110,
+      width:Dimensions.get('window').width,
+      backgroundColor: '#3397f5'
+    },
+    menubutton: {
+      backgroundColor: '#ffffff',
+      height: 75,
+      width: 75,
+      margin:10,
+      borderRadius:10,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    tinyLogo: {
+      width: 65,
+      height: 65,
+    },
+    containerSettings: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 110,
+      
+      //margin: 16,
     },
 
   });

@@ -4,8 +4,18 @@ import { styles } from "../components/StyleSheet.js";
 import FeaturedTab from "../components/FeaturedTab.js";
 import NormalRecipeButton from "../components/NormalRecipeButton.js";
 import MealPrepButton from "../components/MealPrepButton.js";
+import { CATEGORIES } from "../data/dummy-data.js";
+import { FlatList } from "react-native";
+function renderCategoryItem(item) {
+  return ;
+}
 const HomeScreen = ({ navigation }) => {
     return (
+      // <FlatList
+      //  data={CATEGORIES}
+      //   keyExtractor={(item) => item.id}
+      //    renderItem={renderCategoryItem}
+      //     />
       <View style={styles.container}>
         <FeaturedTab onPress={() =>
             navigation.navigate('Featured')}/>

@@ -21,9 +21,9 @@ const GroceryScreen = ({ navigation }) => {
         <View style={styles.space}/>
         <ExportButton></ExportButton>
         </View>
+        <Scroller></Scroller>
         {menuBar(navigation)}
-        <Text>Grocery</Text>
-        <Scroller></Scroller> 
+        <Text>Grocery</Text> 
       </View>
 
     );

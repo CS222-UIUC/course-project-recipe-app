@@ -7,6 +7,7 @@ function FeaturedTab({children, color, onPress}) {
     <View style={styles.featuredStyle}>
         <Pressable
         onPress={onPress}
+        style = {({ pressed }) => [pressed ? styles.buttonPressed : null]}
         >
             <View>
                 <Text style ={styles.titleText}>Featured Tab</Text>

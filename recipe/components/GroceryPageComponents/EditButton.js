@@ -7,6 +7,7 @@ function EditButton({children, color, onPress}) {
     <View style={styles.roundButton}>
         <Pressable
         onPress={onPress}
+        style = {({ pressed }) => [pressed ? styles.buttonPressed : null]}
         >
             <View>
                 <Text>Edit</Text>

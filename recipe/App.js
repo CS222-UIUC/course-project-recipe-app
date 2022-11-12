@@ -10,8 +10,10 @@ import { SettingsScreen } from './screens/SettingsScreen.js';
 import FeaturedMealsOverviewScreen from './screens/FeaturedMealsOverviewScreen.js';
 import MealPrepScreen from './screens/MealPrepScreen.js';
 import NormalRecipeScreen from './screens/NormalRecipeScreen.js';
+//import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createNativeStackNavigator();
+//const Tab = createBottomTabNavigator();
 const App = () => {
   return (
     <NavigationContainer>

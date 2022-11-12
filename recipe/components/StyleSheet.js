@@ -5,8 +5,11 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: 100,
+      padding: 140,
       //margin: 16,
+    },
+    buttonPressed: {
+      opacity: 0.5,
     },
     roundButton: {
       width: 60,
@@ -72,8 +75,18 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       //justifyContent: 'center',
-      padding: 100,
       //margin: 16,
+    },
+    containerSearch:{
+      margin: 10,
+
+    },
+    input: {
+      backgroundColor: '#fff',
+      padding: 10,
+      borderRadius: 10,
+      color: "#000",
+      borderWidth: 1,
     },
 
   });

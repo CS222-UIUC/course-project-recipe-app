@@ -3,7 +3,7 @@ import { Dimensions } from 'react-native'
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#ebebeb',
       alignItems: 'center',
       justifyContent: 'center',
       padding: 140,
@@ -20,13 +20,29 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       padding: 10,
       borderRadius: 50,
-      backgroundColor: '#3397f5',
+      backgroundColor: '#ffb265',
     },
     scrollview: {
-      borderRadius: 50,
-      alignItems: 'flex-start',
+      width:Dimensions.get('window').width,
+      borderRadius: 0,
+      alignItems: 'center',
       justifyContent: 'flex-start',
-      fontSize: 30
+      height: Dimensions.get('window').height * .42,
+      
+      
+    },
+    scrollitem:{
+      width:Dimensions.get('window').width * .85,
+      fontSize: 25,
+      padding:7,
+      margin:5,
+      backgroundColor: '#ffb265',
+      borderRadius: 15,
+    },
+    scrolltext:{
+      padding:7,
+      fontSize: 25,
+      
     },
     profilePic: {
       width: 100,
@@ -44,11 +60,11 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       padding: 10,
       borderRadius: 20,
-      backgroundColor: '#3397f5',
+      backgroundColor: '#ffb265',
     },
     containerProfile: {
       //flex: 2,
-      backgroundColor: '#fff',
+      backgroundColor: '#ebebeb',
       alignItems: 'center',
       fontSize: 20,
       fontWeight: "bold"
@@ -72,7 +88,7 @@ const styles = StyleSheet.create({
       height: 55,
     },
     featuredStyle: {
-      backgroundColor: '#3397f5',
+      backgroundColor: '#ffb265',
       alignItems: 'center',
       width: 300,
       height: 200,
@@ -81,7 +97,7 @@ const styles = StyleSheet.create({
     },
     containerHorizontal: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#ebebeb',
       flexDirection: 'row',
       alignItems: 'center',
       //justifyContent: 'center',
@@ -92,7 +108,7 @@ const styles = StyleSheet.create({
       width: 270,
     },
     input: {
-      backgroundColor: '#fff',
+      backgroundColor: '#ebebeb',
       padding: 10,
       borderRadius: 10,
       color: "#000",
@@ -106,10 +122,10 @@ const styles = StyleSheet.create({
       bottom : 0,
       height: 110,
       width:Dimensions.get('window').width,
-      backgroundColor: '#3397f5'
+      backgroundColor: '#ffb265'
     },
     menubutton: {
-      backgroundColor: '#ffffff',
+      backgroundColor: '#ebebeb',
       height: 75,
       width: 75,
       margin:10,
@@ -123,7 +139,7 @@ const styles = StyleSheet.create({
     },
     containerSettings: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#ebebeb',
       alignItems: 'center',
       justifyContent: 'center',
       padding: 110,

@@ -17,16 +17,26 @@ function Scroller({items}) {
         <View style = {styles.scrollview}> 
             <ScrollView> 
                 { listItems.map((item) => {
-                    return (
-                        <View key={item.key}>
-                            <Text >{item.listItems}</Text>
-                        </View>
-                    )
+                    return(
+                    <View key={item.key} style= {styles.scrollitem}>
+                        
+                        <Text style= {styles.scrolltext}>{item.listItems}</Text>
+                    </View>
+                    );
+                    
                 })}
             </ScrollView> 
             
         </View>
     );
+}
+function longItem({keya, listItems}){
+    return (
+        <View key={keya}>
+            <Text >{listItems}</Text>
+        </View>
+    )
+
 }
 export default Scroller;
 

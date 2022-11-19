@@ -3,7 +3,7 @@ import { Dimensions } from 'react-native'
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#ebebeb',
       alignItems: 'center',
       justifyContent: 'center',
       padding: 140,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     },
     containerProfile: {
       //flex: 2,
-      backgroundColor: '#fff',
+      backgroundColor: '#ebebeb',
       alignItems: 'center',
       fontSize: 20,
       fontWeight: "bold"
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     },
     containerSettings: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#ebebeb',
       alignItems: 'center',
       justifyContent: 'center',
       padding: 110,

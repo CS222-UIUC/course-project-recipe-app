@@ -120,12 +120,12 @@ const styles = StyleSheet.create({
       position: 'absolute',
       justifyContent: 'center',
       bottom : 0,
-      height: 110,
+      height: 100,
       width:Dimensions.get('window').width,
       backgroundColor: '#ffb265'
     },
     menubutton: {
-      backgroundColor: '#ebebeb',
+      
       height: 75,
       width: 75,
       margin:10,

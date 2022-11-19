@@ -26,19 +26,38 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
+app.get('/groceries', async (req, res) => {
+  const user = await User.findById('6379434e41121f9226ba1e13');
+  res.json(JSON.stringify(user.groceries));
+});
+
+app.post('/groceries', async (req, res) => {
+  var newItem = JSON.stringify(req.body).slice(2).split('"')[0].toLocaleLowerCase();
+  const user = await User.findById('6379434e41121f9226ba1e13');
+  var userGroceries = user.groceries;
+  userGroceries.push(newItem);
+  User.updateOne(
+          { _id: ObjectId('6379434e41121f9226ba1e13') },
+          { $set: { groceries: userGroceries } }
+  ).then(result => {
+    res.json({ message: "APPLE" });
+    }).catch(err => {
+      console.log(err);
+    })
+});
+
 app.get('/pantry', async (req, res) => {
-  const user = await User.findById('63626cab767cc0e556117add');
-  console.log(user.ingredients);
+  const user = await User.findById('6379434e41121f9226ba1e13');
   res.json(JSON.stringify(user.ingredients));
 });
 
 app.post('/pantry', async (req, res) => {
-  var newIngredient = JSON.stringify(req.body).slice(2).split('"')[0];
-  const user = await User.findById('63626cab767cc0e556117add');
+  var newIngredient = JSON.stringify(req.body).slice(2).split('"')[0].toLocaleLowerCase();
+  const user = await User.findById('6379434e41121f9226ba1e13');
   var userIngredients = user.ingredients;
   userIngredients.push(newIngredient);
   User.updateOne(
-          { _id: ObjectId('63626cab767cc0e556117add') },
+          { _id: ObjectId('6379434e41121f9226ba1e13') },
           { $set: { ingredients: userIngredients } }
   ).then(result => {
     res.json({ message: "APPLE" });

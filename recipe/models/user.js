@@ -13,7 +13,11 @@ const userSchema = new Schema({
   recipes: {
     type: Array,
     required: true
-  }
+  },
+  groceries: {
+    type: Array,
+    required: true
+  },
 }, { timestamps: true });
 
 const User = mongoose.model('User', userSchema);

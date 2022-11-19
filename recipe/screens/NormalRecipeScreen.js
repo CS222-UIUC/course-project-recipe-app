@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from 'react-native'
 function NormalRecipeScreen() {
     return (
         <View style={styles.container}>
-           <Text> Normal Recipe </Text> 
+            <Text> Normal Recipe </Text> 
         </View>
     );
 }

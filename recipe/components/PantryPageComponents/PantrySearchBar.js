@@ -3,7 +3,7 @@ import { View, Text, TextInput, ScrollView } from "react-native";
 import react, {useState} from "react";
 import {styles} from "../StyleSheet.js";
 
-const SearchBar = (props) => {
+const PantrySearchBar = (props) => {
     const [text, onChangeText] = React.useState("");
 
     return(
@@ -14,19 +14,20 @@ const SearchBar = (props) => {
                 onChangeText={onChangeText}
                 value={text}
                 onSubmitEditing={() => {
-                    const url1 = 'http://192.168.1.93:3001/pantry';
-                    const url2 = 'http://10.195.152.133:3001/pantry';
-                    fetch(url1, {
+                    fetch('http://192.168.0.167:3001/pantry', {
                         method: 'POST',
                         headers: {"Conent-Type": "application/json"},
                         body: text
                     })
+                    .catch(error => { console.log(error) })
+                    
+                    onChangeText('');
                 }}
                 
             />
         </View>
     )
 }
-export default SearchBar;
+export default PantrySearchBar;
 
 

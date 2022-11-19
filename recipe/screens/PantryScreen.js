@@ -6,7 +6,7 @@ import InputButton from "../components/PantryPageComponents/InputButton.js";
 import PantryEditButton from "../components/PantryPageComponents/PantryEditButton.js";
 import ScanButton from "../components/PantryPageComponents/ScanButton.js";
 import Scroller from "../components/ScrollView.js";
-import SearchBar from "../components/PantryPageComponents/SearchBar.js";
+import PantrySearchBar from "../components/PantryPageComponents/PantrySearchBar.js";
 import react, {useEffect, useState} from 'react';
 const PantryScreen = ({ navigation }) => {
   const [searchText, setSearchText] = useState("");
@@ -21,7 +21,7 @@ const PantryScreen = ({ navigation }) => {
         <View style={styles.space}/>
         </View>
         <View style={{height: 40}} />
-        <SearchBar searchText={searchText} setSearchText={setSearchText}/>
+        <PantrySearchBar searchText={searchText} setSearchText={setSearchText}/>
         <View style={{height: 60}} />
         <Scroller></Scroller>
         {menuBar(navigation)}

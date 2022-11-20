@@ -9,7 +9,7 @@ function ScanButton({children, color, onPress}) {
         onPress={onPress}
         >
             <View>
-                <Text>Scan</Text>
+                <Text style = {{fontWeight: 'bold'}}>Scan</Text>
             </View>
         </Pressable>
     </View>

@@ -10,6 +10,7 @@ import { SettingsScreen } from './screens/SettingsScreen.js';
 import FeaturedMealsOverviewScreen from './screens/FeaturedMealsOverviewScreen.js';
 import MealPrepScreen from './screens/MealPrepScreen.js';
 import NormalRecipeScreen from './screens/NormalRecipeScreen.js';
+import MealDetailScreen from './screens/MealDetailsScreen.js';
 //import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createNativeStackNavigator();
@@ -24,9 +25,10 @@ const App = () => {
           <Stack.Screen options={{ headerShown: false, animation: 'fade'}}name="Grocery" component={GroceryScreen} />
          <Stack.Screen options={{ headerShown: false, animation: 'fade'}}name="Pantry" component={PantryScreen} /> 
           <Stack.Screen options={{ headerShown: false, animation: 'fade'}}name="Settings" component={SettingsScreen} />
-          <Stack.Screen name="Featured" component={FeaturedMealsOverviewScreen} /> 
-          <Stack.Screen name="Prep" component={MealPrepScreen} />
-          <Stack.Screen name="Normal" component={NormalRecipeScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Featured" component={FeaturedMealsOverviewScreen} /> 
+          <Stack.Screen options={{animation: 'fade'}} name="Prep" component={MealPrepScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Normal" component={NormalRecipeScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Overview" component={MealDetailScreen} />
         </Stack.Navigator>
       
     </NavigationContainer>

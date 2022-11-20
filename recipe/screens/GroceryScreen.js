@@ -15,8 +15,6 @@ const GroceryScreen = ({ navigation }) => {
     return (
       <View style={styles.container}>
         <View style={styles.containerHorizontal}>
-        <AddButton></AddButton>
-        <View style={styles.space}/>
         <EditButton></EditButton>
         <View style={styles.space}/>
         <ShareButton></ShareButton>

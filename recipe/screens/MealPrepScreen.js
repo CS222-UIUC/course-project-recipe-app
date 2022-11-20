@@ -6,7 +6,10 @@ const MealPrepScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             
-            <MealList>
+            <MealList
+            onPress={() =>
+                navigation.navigate('Overview')}
+            >
             </MealList>
             {menuBar(navigation)}
         </View>

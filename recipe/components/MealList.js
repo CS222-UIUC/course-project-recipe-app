@@ -3,7 +3,7 @@ import { View, Text, ScrollView, Pressable } from 'react-native';
 import {styles} from "./StyleSheet.js";
 
 
-function MealList({items}) {
+function MealList({items, onPress}) {
     const[listItems, setList] = useState([
         { listItems: 'test1', key: '1'},
         { listItems: 'test2', key: '2'},
@@ -18,8 +18,11 @@ function MealList({items}) {
             <ScrollView> 
                 { listItems.map((item) => {
                     return(
-                    <Pressable key={item.key} style= {styles.listscrollitem}>
-                        
+                    <Pressable 
+                    onPress = {onPress}
+                    key={item.key} style= {styles.listscrollitem}
+                    Style = {({ pressed }) => [pressed ? styles.buttonPressed : null]}
+                    > 
                         <Text style= {styles.listscrolltext}>{item.listItems}</Text>
                     </Pressable>
                     );

@@ -10,7 +10,7 @@ function EditButton({children, color, onPress}) {
         style = {({ pressed }) => [pressed ? styles.buttonPressed : null]}
         >
             <View>
-                <Text>Edit</Text>
+                <Text style = {{fontWeight: 'bold'}}>Edit</Text>
             </View>
         </Pressable>
     </View>

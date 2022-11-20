@@ -25,7 +25,7 @@ const App = () => {
          <Stack.Screen options={{ headerShown: false, animation: 'fade'}}name="Pantry" component={PantryScreen} /> 
           <Stack.Screen options={{ headerShown: false, animation: 'fade'}}name="Settings" component={SettingsScreen} />
           <Stack.Screen name="Featured" component={FeaturedMealsOverviewScreen} /> 
-          <Stack.Screen name="Meal Prep" component={MealPrepScreen} />
+          <Stack.Screen name="Prep" component={MealPrepScreen} />
           <Stack.Screen name="Normal" component={NormalRecipeScreen} />
         </Stack.Navigator>
       

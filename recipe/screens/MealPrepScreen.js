@@ -1,15 +1,15 @@
 import { View, Text, StyleSheet } from 'react-native'
-function MealPrepScreen() {
+import MealList from '../components/MealList';
+import {styles} from '../components/StyleSheet.js'
+import { menuBar } from './menubar';
+const MealPrepScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
-           <Text> Meal Prep </Text> 
+            
+            <MealList>
+            </MealList>
+            {menuBar(navigation)}
         </View>
     );
 }
 export default MealPrepScreen
-const styles =  StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 16,
-    },
-});

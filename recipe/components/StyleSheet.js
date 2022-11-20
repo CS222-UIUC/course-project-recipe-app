@@ -120,22 +120,24 @@ const styles = StyleSheet.create({
       position: 'absolute',
       justifyContent: 'center',
       bottom : 0,
-      height: 100,
+      height: 80,
       width:Dimensions.get('window').width,
       backgroundColor: '#ffb265'
     },
     menubutton: {
       
-      height: 75,
-      width: 75,
-      margin:10,
+      
+     
+     
+      paddingHorizontal: 25,
+      paddingVertical: 30,
       borderRadius:10,
       justifyContent: 'center',
       alignItems: 'center',
     },
     tinyLogo: {
-      width: 65,
-      height: 65,
+      width: 30,
+      height: 30,
     },
     containerSettings: {
       flex: 1,
@@ -146,7 +148,32 @@ const styles = StyleSheet.create({
       
       //margin: 16,
     },
-
+    logoText:{
+      margin: 4,
+      fontSize: 10
+    },
+    listscrollview: {
+      width:Dimensions.get('window').width,
+      borderRadius: 0,
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      height: Dimensions.get('window').height -140,
+      
+      
+    },
+    listscrollitem:{
+      width:Dimensions.get('window').width * .85,
+      fontSize: 25,
+      padding:7,
+      margin:5,
+      backgroundColor: '#ffb265',
+      borderRadius: 15,
+    },
+    listscrolltext:{
+      padding:7,
+      fontSize: 25,
+      
+    },
   });
 
   export {styles}

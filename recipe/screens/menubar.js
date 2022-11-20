@@ -13,9 +13,10 @@ const menuBar =  navigation  => {
           >
 
             <Image 
-                style={{width: 70, height: 70}}
+                style={styles.tinyLogo}
                 source={require('../assets/home.png')}
             />
+            <Text style={styles.logoText}>Home</Text>
           </Pressable>
         <Pressable style={styles.menubutton}
           
@@ -24,9 +25,10 @@ const menuBar =  navigation  => {
           }
           >
             <Image 
-                style={{width: 70, height: 70}}
+               style={styles.tinyLogo}
                 source={require('../assets/grocery.png')}
             />
+            <Text style={styles.logoText}>Grocery</Text>
             </Pressable>
         <Pressable style={styles.menubutton}
           
@@ -34,9 +36,10 @@ const menuBar =  navigation  => {
             navigation.navigate('Pantry')
           }
         ><Image 
-        style={{width: 70, height: 70}}
+        style={styles.tinyLogo}
         source={require('../assets/shelving.png')}
         />
+        <Text style={styles.logoText}>Pantry</Text>
         </Pressable>
         <Pressable style={styles.menubutton}
           
@@ -45,9 +48,10 @@ const menuBar =  navigation  => {
           }
           >
             <Image 
-                style={{width: 70, height: 70}}
+                style={styles.tinyLogo}
                 source={require('../assets/settings.png')}
             />
+            <Text style={styles.logoText}>Settings</Text>
           </Pressable>
           
       </View>

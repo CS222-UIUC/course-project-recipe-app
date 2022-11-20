@@ -1,32 +1,59 @@
 
-import {  View, Button} from 'react-native';
+import {  View, Text, Image, Pressable} from 'react-native';
+import {styles} from "../components/StyleSheet.js";
 const menuBar =  navigation  => {
     return (
-      <View>
-        <Button
-          title="Home"
+      
+      <View style={styles.menu}>
+        <Pressable style={styles.menubutton}
+          
           onPress={() =>
             navigation.navigate('Home')
           }
-        />
-        <Button
-          title="Grocery"
+          >
+
+            <Image 
+                style={styles.tinyLogo}
+                source={require('../assets/home.png')}
+            />
+            <Text style={styles.logoText}>Home</Text>
+          </Pressable>
+        <Pressable style={styles.menubutton}
+          
           onPress={() =>
             navigation.navigate('Grocery')
           }
-        />
-        <Button
-          title="Pantry"
+          >
+            <Image 
+               style={styles.tinyLogo}
+                source={require('../assets/grocery.png')}
+            />
+            <Text style={styles.logoText}>Grocery</Text>
+            </Pressable>
+        <Pressable style={styles.menubutton}
+          
           onPress={() =>
             navigation.navigate('Pantry')
           }
+        ><Image 
+        style={styles.tinyLogo}
+        source={require('../assets/shelving.png')}
         />
-        <Button
-          title="Settings"
+        <Text style={styles.logoText}>Pantry</Text>
+        </Pressable>
+        <Pressable style={styles.menubutton}
+          
           onPress={() =>
             navigation.navigate('Settings')
           }
-        />
+          >
+            <Image 
+                style={styles.tinyLogo}
+                source={require('../assets/settings.png')}
+            />
+            <Text style={styles.logoText}>Settings</Text>
+          </Pressable>
+          
       </View>
     )
     ;

@@ -1,19 +1,19 @@
 import { Platform, Pressable, View, Text } from 'react-native';
 // this button could be used for our main page when naviagting
 // to the specific recipe types
-import {styles} from "./StyleSheet.js";
-function FeaturedTab({children, color, onPress}) {
+import {styles} from "../StyleSheet.js";
+function EditButton({children, color, onPress}) {
     return (
-    <View style={styles.featuredStyle}>
+    <View style={styles.roundButton}>
         <Pressable
         onPress={onPress}
         style = {({ pressed }) => [pressed ? styles.buttonPressed : null]}
         >
             <View>
-                <Text style ={styles.titleText}>Featured Tab</Text>
+                <Text>Edit</Text>
             </View>
         </Pressable>
     </View>
     );
 }
-export default FeaturedTab;
+export default EditButton;

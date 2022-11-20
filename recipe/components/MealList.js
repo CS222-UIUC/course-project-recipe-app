@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Pressable } from 'react-native';
 import {styles} from "./StyleSheet.js";
 
 
-function Scroller({items}) {
+function MealList({items}) {
     const[listItems, setList] = useState([
         { listItems: 'test1', key: '1'},
         { listItems: 'test2', key: '2'},
@@ -14,14 +14,14 @@ function Scroller({items}) {
         { listItems: 'test1', key: '7'},
       ]);
     return (
-        <View style = {styles.scrollview}> 
+        <View style = {styles.listscrollview}> 
             <ScrollView> 
                 { listItems.map((item) => {
                     return(
-                    <View key={item.key} style= {styles.scrollitem}>
+                    <Pressable key={item.key} style= {styles.listscrollitem}>
                         
-                        <Text style= {styles.scrolltext}>{item.listItems}</Text>
-                    </View>
+                        <Text style= {styles.listscrolltext}>{item.listItems}</Text>
+                    </Pressable>
                     );
                     
                 })}
@@ -30,15 +30,8 @@ function Scroller({items}) {
         </View>
     );
 }
-function longItem({keya, listItems}){
-    return (
-        <View key={keya}>
-            <Text >{listItems}</Text>
-        </View>
-    )
 
-}
-export default Scroller;
+export default MealList;
 
 
 

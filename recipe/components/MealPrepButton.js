@@ -7,6 +7,7 @@ function MealPrepButton({children, onPress}) {
     <View style={styles.settingsStyle}>
         <Pressable
         onPress={onPress}
+        style = {({ pressed }) => [pressed ? styles.buttonPressed : null]}
         >
             <View>
                 <Text style ={styles.titleText}>Meal Prep Recipes</Text>

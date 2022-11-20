@@ -5,7 +5,7 @@ import { styles } from '../components/StyleSheet.js'
 import SettingsButton from "../components/SettingsButton.js";
 const SettingsScreen = ({ navigation }) => {
     return (
-      <View>
+      <View style={styles.containerSettings}>
         <View style={styles.containerProfile}>
           <Image
             style={{width: 100, height: 100, borderRadius: 50}}
@@ -22,8 +22,9 @@ const SettingsScreen = ({ navigation }) => {
           <SettingsButton>Settings Option 3</SettingsButton>
           <View style={styles.space} />
           <SettingsButton>Settings Option 4</SettingsButton>
+          <View style={styles.Extraspace} />
         </View>
-          {menuBar(navigation)}
+        {menuBar(navigation)}
       </View>
     );
   };

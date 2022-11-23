@@ -125,9 +125,6 @@ const styles = StyleSheet.create({
       backgroundColor: '#ffb265'
     },
     menubutton: {
-      
-      
-     
      
       paddingHorizontal: 25,
       paddingVertical: 30,
@@ -173,6 +170,16 @@ const styles = StyleSheet.create({
       padding:7,
       fontSize: 25,
       
+    },
+    containerMeals: {
+      flex: 1,
+      backgroundColor: '#ebebeb',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 10,
+      
+      
+      //margin: 16,
     },
   });
 

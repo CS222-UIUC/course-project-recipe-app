@@ -17,7 +17,7 @@ const PantryScreen = ({ navigation }) => {
         <View style={styles.space}/>
         <PantryEditButton></PantryEditButton>
         <View style={styles.space}/>
-        <ScanButton></ScanButton>
+        <ScanButton navigation={navigation}  ></ScanButton>
         <View style={styles.space}/>
         </View>
         <View style={{height: 40}} />

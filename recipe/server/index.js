@@ -4,8 +4,11 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const Recipe = require('/Users/patrickcunningham/Programming/recipe/recipe/models/recipe.js');
 const User = require('/Users/patrickcunningham/Programming/recipe/recipe/models/user.js');
-const csv = require('csv-parser')
-const fs = require('fs')
+const csv = require('csv-parser');
+const fs = require('fs');
+const multer = require('multer');
+const sharp = require('sharp');
+
 
 const ObjectId = require('mongodb').ObjectId;
 const PORT = process.env.PORT || 3001;
@@ -19,12 +22,32 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true }))
 app.use(morgan('dev'));
-
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-app.get("/api", (req, res) => {
-  res.json({ message: "Hello from server!" });
+const imageStorage = multer.diskStorage({
+    // Destination to store image     
+    destination: 'images', 
+      filename: (req, file, cb) => {
+        cb(null, file.fieldname + '_' + Date.now()
+          + path.extname(file.originalname))
+            // file.fieldname is name of the field (image)
+            // path.extname get the uploaded file extension
+    }
 });
+
+const upload = multer({
+  storage: imageStorage,
+  limits: {
+    fileSize: 1000000 // 1000000 Bytes = 1 MB
+  },
+  fileFilter(req, file, cb) {
+    if (!file.originalname.match(/\.(png|jpg)$/)) {
+      // upload only png and jpg format
+      return cb(new Error('Please upload a Image'))
+    }
+    cb(undefined, true)
+  }
+}) 
 
 app.get('/groceries', async (req, res) => {
   const user = await User.findById('6379434e41121f9226ba1e13');
@@ -65,6 +88,20 @@ app.post('/pantry', async (req, res) => {
       console.log(err);
     })
 });
+
+app.post('/scan', async (req, res) => {
+  res.json({ message: "APPLE" });
+  // const url = JSON.stringify(req.body).split(',')[1].split('"')[3];
+  const url = req.body;
+  console.log(url);
+});
+
+app.post('/image', upload.single('upload'), (req, res) => {
+  res.send(req.file)
+  console.log(req.body);
+}, (error, req, res, next) => {
+  res.status(400).send({ error: error.message })
+})
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));

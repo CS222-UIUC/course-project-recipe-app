@@ -26,16 +26,7 @@ const ScanScreen = ({ navigation }) => {
     return <Text>Permission for camera not granted. Please change this in settings.</Text>
   }
 
-  let takePic = async () => {
-    let options = {
-      quality: 1,
-      base64: true,
-      exif: false
-    };
-
-    let newPhoto = await cameraRef.current.takePictureAsync(options);
-    setPhoto(newPhoto);
-  };
+  
 
   if (photo) {
     let sharePic = () => {
@@ -52,19 +43,28 @@ const ScanScreen = ({ navigation }) => {
       const data = new FormData();
       data.append("upload", photo.uri.replace("file:///", ""));
 
-      try {
-        const res = await fetch('http://192.168.0.167:3001/image', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Conent-Type': 'multipart/form-data'
-          },
-          body: data,
-        })
-        navigation.navigate('Home')
-      } catch (error) {
-        console.log(error.message);
-      }
+      // try {
+      //   const res = await fetch('http://192.168.0.167:3001/image', {
+      //     method: 'POST',
+      //     headers: {
+      //       Accept: 'application/json',
+      //       'Conent-Type': 'multipart/form-data'
+      //     },
+      //     body: data,
+      //   })
+      //   navigation.navigate('Home')
+      // } catch (error) {
+      //   console.log(error.message);
+      // }
+
+      fetch('http://192.168.0.167:3001/scan', {
+        method: 'POST',
+        headers: { "Conent-Type": "application/json" },
+        body: photo.base64
+      })
+        .catch(error => { console.log(error) })
+      navigation.navigate('Home')
+        
       
     };
 

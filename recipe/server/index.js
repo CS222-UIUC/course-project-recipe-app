@@ -9,6 +9,7 @@ const fs = require('fs');
 const multer = require('multer');
 const sharp = require('sharp');
 
+const {spawn} = require('child_process');
 
 const ObjectId = require('mongodb').ObjectId;
 const PORT = process.env.PORT || 3001;
@@ -20,7 +21,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => console.log(err));
 
 app.use(express.static('public'));
-app.use(express.urlencoded({extended: true }))
+app.use(express.urlencoded({ limit: '25mb', extended: true }))
+app.use(express.json({limit: '25mb'}));
 app.use(morgan('dev'));
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
@@ -90,18 +92,11 @@ app.post('/pantry', async (req, res) => {
 });
 
 app.post('/scan', async (req, res) => {
-  res.json({ message: "APPLE" });
-  // const url = JSON.stringify(req.body).split(',')[1].split('"')[3];
-  const url = req.body;
-  console.log(url);
+	fs.writeFile('./out.jpeg', req.body.imgsource, 'base64', (err) => {
+		if (err) throw err
+	})
+	res.status(200)
 });
-
-app.post('/image', upload.single('upload'), (req, res) => {
-  res.send(req.file)
-  console.log(req.body);
-}, (error, req, res, next) => {
-  res.status(400).send({ error: error.message })
-})
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));

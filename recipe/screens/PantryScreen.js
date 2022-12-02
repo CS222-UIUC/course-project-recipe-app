@@ -13,7 +13,6 @@ const PantryScreen = ({ navigation }) => {
   return (
       <View style={styles.container}>
         <View style={styles.containerHorizontal}>
-        <InputButton></InputButton>
         <View style={styles.space}/>
         <PantryEditButton></PantryEditButton>
         <View style={styles.space}/>

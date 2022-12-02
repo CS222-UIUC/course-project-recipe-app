@@ -32,16 +32,34 @@ function Scroller({items}) {
         <View style = {styles.scrollview}> 
             <ScrollView> 
                 { listItems.map((item) => {
+<<<<<<< HEAD
                     return (
                         <View key={item.key}>
                             <Text >{item.ingredient}</Text>
                         </View>
                     )
+=======
+                    return(
+                    <View key={item.key} style= {styles.scrollitem}>
+                        
+                        <Text style= {styles.scrolltext}>{item.listItems}</Text>
+                    </View>
+                    );
+                    
+>>>>>>> 7bf82e109a167ff4fb0dc2d1881dbbd8a951e06a
                 })}
             </ScrollView> 
             
         </View>
     );
+}
+function longItem({keya, listItems}){
+    return (
+        <View key={keya}>
+            <Text >{listItems}</Text>
+        </View>
+    )
+
 }
 export default Scroller;
 

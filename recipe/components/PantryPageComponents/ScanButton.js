@@ -5,7 +5,9 @@ import * as ImagePicker from 'expo-image-picker'
 import * as Permissions from 'expo-permissions'
 // this button could be used for our main page when naviagting
 // to the specific recipe types
-import {styles} from "../StyleSheet.js";
+import { styles } from "../StyleSheet.js";
+import * as ImageManipulator from 'expo-image-manipulator';
+
 function ScanButton({ children, color, onPress, navigation }) {
 
     takeImage = async () => {
@@ -14,12 +16,13 @@ function ScanButton({ children, color, onPress, navigation }) {
             mediaTypes: ImagePicker.MediaTypeOptions.Images,
             allowsEditing: true,
             aspect: [3, 3],
-            quality: 1,
+            quality: 0.01,
             base64: true,
         })
         // make sure a image was taken:
         if (!image.canceled) {
-            fetch('http://192.168.0.167:3001/scan', {
+
+            fetch('http://192.168.1.93:3001/scan', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',

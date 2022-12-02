@@ -12,7 +12,7 @@ function Scroller({items}) {
         async function getIngredients () {
         try {
             let response = fetch(
-                'http://192.168.0.167:3001/pantry'
+                'http://192.168.1.93:3001/pantry'
             ).then((response) => response.json())
                 .then((json) => {
                     var ingredients = [];

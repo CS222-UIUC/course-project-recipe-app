@@ -11,7 +11,7 @@ function GroceryScroller({items}) {
         async function getGroceries () {
         try {
             let response = fetch(
-                'http://192.168.0.167:3001/groceries'
+                'http://192.168.1.93:3001/groceries'
             ).then((response) => response.json())
                 .then((json) => {
                     var groceries = [];

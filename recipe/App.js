@@ -7,6 +7,7 @@ import { PantryScreen } from './screens/PantryScreen.js';
 import { GroceryScreen } from './screens/GroceryScreen.js';
 import { HomeScreen } from './screens/HomeScreen.js';
 import { SettingsScreen } from './screens/SettingsScreen.js';
+import { ScanScreen } from './screens/ScanScreen.js';
 import FeaturedMealsOverviewScreen from './screens/FeaturedMealsOverviewScreen.js';
 import MealPrepScreen from './screens/MealPrepScreen.js';
 import NormalRecipeScreen from './screens/NormalRecipeScreen.js';
@@ -26,7 +27,8 @@ const App = () => {
           <Stack.Screen options={{ headerShown: false, animation: 'fade'}}name="Settings" component={SettingsScreen} />
           <Stack.Screen name="Featured" component={FeaturedMealsOverviewScreen} /> 
           <Stack.Screen name="Prep" component={MealPrepScreen} />
-          <Stack.Screen name="Normal" component={NormalRecipeScreen} />
+        <Stack.Screen name="Normal" component={NormalRecipeScreen} />
+        <Stack.Screen name="Scan" component={ScanScreen} />
         </Stack.Navigator>
       
     </NavigationContainer>

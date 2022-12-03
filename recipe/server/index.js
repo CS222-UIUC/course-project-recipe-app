@@ -76,16 +76,21 @@ app.get('/pantry', async (req, res) => {
   res.json(JSON.stringify(user.ingredients));
 });
 
+app.get('/recipes', async (req, res) => {
+  const user = await User.findById('6379434e41121f9226ba1e13');
+  res.json(JSON.stringify(user.recipes));
+});
+
 app.post('/pantry', async (req, res) => {
-  var newIngredient = JSON.stringify(req.body).slice(2).split('"')[0].toLocaleLowerCase();
+  var newIngredient = JSON.stringify(req.body).slice(2).split('"')[0].toLocaleLowerCase().trim();
   const user = await User.findById('6379434e41121f9226ba1e13');
   var userIngredients = user.ingredients;
-  userIngredients.push(newIngredient);
+  userIngredients.push(newIngredient.trim());
   User.updateOne(
           { _id: ObjectId('6379434e41121f9226ba1e13') },
           { $set: { ingredients: userIngredients } }
   ).then(result => {
-    res.json({ message: "APPLE" });
+    updateRecipes();
     }).catch(err => {
       console.log(err);
     })
@@ -105,4 +110,40 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+
+async function updateRecipes() {
+
+  const user = await User.findById('6379434e41121f9226ba1e13');
+  var ingredients = user.ingredients;
+
+  ingredients = ingredients.map(element => {
+      return element.toUpperCase();
+  });
+  
+  compare = (a1, a2) => a1.reduce((a, c) => a + a2.includes(c), 0);
+  var goodRecipes = [];
+
+  const recipes = await Recipe.find();
+  recipes.forEach(r => {
+
+    const rIngredients = r.ingredients.map(element => {
+      return element.toUpperCase();
+    });
+
+    if (compare(ingredients, rIngredients) > 0) {
+      console.log(r.title);
+          goodRecipes.push([r.title, compare(ingredients, rIngredients)]);
+        }
+  })
+
+  goodRecipes.sort(function(a, b){return b[1] - a[1]});
+  User.updateOne(
+        { _id: ObjectId("6379434e41121f9226ba1e13") },
+        { $set: { title: "Patrick Cunningham", recipes: goodRecipes } }
+  ).then(result => {
+    console.log(result);
+  }).catch(err => {
+    console.log(err);
+  })
+}
 

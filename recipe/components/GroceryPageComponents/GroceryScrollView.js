@@ -32,8 +32,8 @@ function GroceryScroller({items}) {
             <ScrollView> 
                 { listItems.map((item) => {
                     return (
-                        <View key={item.key}>
-                            <Text >{item.item}</Text>
+                        <View key={item.key} style= {styles.scrollitem}>
+                            <Text style= {styles.scrolltext}>{item.item}</Text>
                         </View>
                     )
                 })}

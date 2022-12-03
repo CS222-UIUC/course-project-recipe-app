@@ -15,7 +15,7 @@
     "concurrently": "^7.5.0",
     "csv-parser": "^3.0.0",
     "expo": "~46.0.13",
-    "expo-camera": "~12.3.0",
+    "expo-camera": "~12.4.0",
     "expo-file-system": "~14.1.0",
     "expo-image-manipulator": "~10.4.0",
     "expo-image-picker": "~13.3.1",

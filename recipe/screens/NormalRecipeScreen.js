@@ -36,9 +36,7 @@ const NormalRecipeScreen = ({items}) => {
     };
     return (
         <View style={styles.container}>
-            <MealList
-            onPress={dataTransfer}
-            >
+            <MealList navigation={navigation}>
             </MealList>
             {menuBar(navigation)}
         </View>

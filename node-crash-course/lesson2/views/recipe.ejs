@@ -1,0 +1,22 @@
+<html lang="en">
+  <%- include('./partials/head.ejs') %> 
+<body>
+  
+  <%- include('./partials/nav.ejs') %> 
+
+  <div class="create-blog content">
+    <form action="/blogs" method="POST">
+      <label for="title">Recipe Name:</label>
+      <input type="text" id="title" name="title" required>
+      <label for="time">Prep Time:</label>
+      <input type="text" id="time" name = "time" required>
+      <label for="ingredients">Ingredients:</label>
+      <textarea id="ingredients" name="ingredients" required></textarea>
+      <button>Submit</button>
+    </form>
+  </div>
+
+  <%- include('./partials/footer.ejs') %> 
+  
+</body>
+</html>

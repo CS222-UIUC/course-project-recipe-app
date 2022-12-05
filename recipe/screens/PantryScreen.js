@@ -13,15 +13,13 @@ const PantryScreen = ({ navigation }) => {
   return (
       <View style={styles.container}>
         <View style={styles.containerHorizontal}>
-        <View style={styles.space}/>
-        <PantryEditButton></PantryEditButton>
-        <View style={styles.space}/>
+        
+        <PantrySearchBar style={styles.searchBar} searchText={searchText} setSearchText={setSearchText}/>
         <ScanButton navigation={navigation}></ScanButton>
-        <View style={styles.space}/>
         </View>
-        <View style={{height: 40}} />
-        <PantrySearchBar searchText={searchText} setSearchText={setSearchText}/>
-        <View style={{height: 60}} />
+        
+        
+       
         <Scroller></Scroller>
         {menuBar(navigation)}
       </View>

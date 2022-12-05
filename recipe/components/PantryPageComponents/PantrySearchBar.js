@@ -14,7 +14,7 @@ const PantrySearchBar = (props) => {
                 onChangeText={onChangeText}
                 value={text}
                 onSubmitEditing={() => {
-                    fetch('http://192.168.1.93:3001/pantry', {
+                    fetch('http://10.0.0.72:3001/pantry', {
                         method: 'POST',
                         headers: {"Conent-Type": "application/json"},
                         body: text

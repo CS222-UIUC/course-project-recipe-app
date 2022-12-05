@@ -14,7 +14,7 @@ const GrocerySearchBar = (props) => {
                 onChangeText={onChangeText}
                 value={text}
                 onSubmitEditing={async () => {
-                    fetch('http://192.168.1.93:3001/groceries', {
+                    fetch('http://10.0.0.72:3001/groceries', {
                         method: 'POST',
                         headers: {"Conent-Type": "application/json"},
                         body: text

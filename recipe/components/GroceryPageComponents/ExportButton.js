@@ -10,7 +10,7 @@ function ExportButton({children, color, onPress}) {
         style = {({ pressed }) => [pressed ? styles.buttonPressed : null]}
         >
             <View>
-                <Text>Export</Text>
+                <Text style = {styles.texto} >Export</Text>
             </View>
         </Pressable>
     </View>

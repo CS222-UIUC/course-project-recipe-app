@@ -1,6 +1,6 @@
 import { connection } from 'mongoose';
 import React, {useState, useEffect} from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView,Image, Pressable } from 'react-native';
 import {styles} from "./StyleSheet.js";
 
 
@@ -12,7 +12,7 @@ function Scroller({items}) {
         async function getIngredients () {
         try {
             let response = fetch(
-                'http://192.168.1.93:3001/pantry'
+                'http://10.0.0.72:3001/pantry'
             ).then((response) => response.json())
                 .then((json) => {
                     var ingredients = [];
@@ -32,21 +32,30 @@ function Scroller({items}) {
         <View style = {styles.scrollview}> 
             <ScrollView> 
                 { listItems.map((item) => {
-<<<<<<< HEAD
-                    return (
-                        <View key={item.key}>
-                            <Text >{item.ingredient}</Text>
-                        </View>
-                    )
-=======
+                 
                     return(
                     <View key={item.key} style= {styles.scrollitem}>
                         
-                        <Text style= {styles.scrolltext}>{item.listItems}</Text>
+                        <Text style= {styles.scrolltext}>{item.ingredient}</Text>
+                        <Pressable style={styles.removebutton}
+          
+                            onPress={() => {
+                                fetch('http://10.0.0.72:3001/delete/pantry', {
+                                method: 'POST',
+                                headers: {"Conent-Type": "application/json"},
+                                body: item.ingredient
+                            })
+                            .catch(error => { console.log(error) })
+                            }}
+                            ><Image 
+                            style={styles.removeLogo}
+                            source={require('../assets/delete.png')}
+                            />
+                            
+                            </Pressable>
                     </View>
                     );
                     
->>>>>>> 7bf82e109a167ff4fb0dc2d1881dbbd8a951e06a
                 })}
             </ScrollView> 
             

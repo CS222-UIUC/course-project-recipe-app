@@ -5,7 +5,7 @@ import { menuBar } from './menubar';
 const NormalRecipeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <MealList>
+            <MealList navigation={navigation}>
             </MealList>
             {menuBar(navigation)}
         </View>

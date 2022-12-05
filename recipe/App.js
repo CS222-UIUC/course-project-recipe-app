@@ -8,6 +8,7 @@ import { GroceryScreen } from './screens/GroceryScreen.js';
 import { HomeScreen } from './screens/HomeScreen.js';
 import { SettingsScreen } from './screens/SettingsScreen.js';
 import { ScanScreen } from './screens/ScanScreen.js';
+import { RecipeDetailsScreen } from './screens/RecipeDetailsScreen.js';
 import FeaturedMealsOverviewScreen from './screens/FeaturedMealsOverviewScreen.js';
 import MealPrepScreen from './screens/MealPrepScreen.js';
 import NormalRecipeScreen from './screens/NormalRecipeScreen.js';
@@ -29,6 +30,7 @@ const App = () => {
           <Stack.Screen name="Prep" component={MealPrepScreen} />
         <Stack.Screen name="Normal" component={NormalRecipeScreen} />
         <Stack.Screen name="Scan" component={ScanScreen} />
+        <Stack.Screen name="Recipe" component={RecipeDetailsScreen} />
         </Stack.Navigator>
       
     </NavigationContainer>

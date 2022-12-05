@@ -3,11 +3,16 @@ import { View, Text, ScrollView, Pressable } from 'react-native';
 import {styles} from "./StyleSheet.js";
 
 
-function MealList({items}) {
+function MealList({items, navigation}) {
     const [listItems, setList] = useState([]); 
 
+    const onPress = (id) => {
+        navigation.navigate('Recipe', {
+            id: id,
+        });
+    };
+    
     useEffect(() => {
-        
         async function getRecipes () {
         try {
             let response = fetch(
@@ -16,10 +21,11 @@ function MealList({items}) {
                 .then((json) => {
                     var recipes = [];
                     var array = json.slice(1, -1).split(',');
-                    for (var i in array) {
+                    for (var i = 0; i < array.length; i+=3) {
                         var recipeName = array[i].slice(1, -1);
-                        if (recipeName && recipeName != "") {
-                            recipes.push({ recipe: array[i].slice(2, -1), key: i });
+                        var id = array[i + 2].slice(1, -2);
+                        if (recipeName && recipeName != "" && recipeName != " ") {
+                            recipes.push({ recipe: array[i].slice(2, -1), key: i, id: id });
                         } 
                     }
                     setList(recipes);
@@ -29,14 +35,14 @@ function MealList({items}) {
         }
         };
         getRecipes();
-    }, [listItems])
+    }, [])
 
     return (
         <View style = {styles.listscrollview}> 
             <ScrollView> 
                 { listItems.map((item) => {
                     return(
-                    <Pressable key={item.key} style= {styles.listscrollitem}>
+                    <Pressable key={item.key} style= {styles.listscrollitem} onPress={() => onPress(item.id)}>
                         <Text style= {styles.listscrolltext}>{item.recipe}</Text>
                     </Pressable>
                     );

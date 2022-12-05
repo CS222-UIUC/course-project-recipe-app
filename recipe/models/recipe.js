@@ -13,6 +13,14 @@ const recipeSchema = new Schema({
   ingredients: {
     type: Array,
     required: true
+  },
+  measurements: {
+    type: Array,
+    required: true
+  },
+  steps: {
+    type: Array,
+    required: true
   }
 }, { timestamps: true });
 

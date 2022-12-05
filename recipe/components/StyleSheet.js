@@ -181,6 +181,16 @@ const styles = StyleSheet.create({
       
       //margin: 16,
     },
+    featuredButton: {
+      width:Dimensions.get('window').width * .85,
+      height: 70,
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding:7,
+      fontSize: 25,
+      borderRadius: 15,
+      backgroundColor: '#ffb265',
+    },
   });
 
   export {styles}

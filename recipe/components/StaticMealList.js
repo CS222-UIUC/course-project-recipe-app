@@ -22,11 +22,9 @@ function StaticMealList({items, onPress}) {
                     > 
                         <Text style= {styles.listscrolltext}>{item.listItems}</Text>
                     </Pressable>
-                    );
-                    
+                    ); 
                 })}
             </ScrollView> 
-            
         </View>
     );
 }

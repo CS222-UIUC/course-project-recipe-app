@@ -11,6 +11,10 @@ import FeaturedMealsOverviewScreen from './screens/FeaturedMealsOverviewScreen.j
 import MealPrepScreen from './screens/MealPrepScreen.js';
 import NormalRecipeScreen from './screens/NormalRecipeScreen.js';
 import MealDetailScreen from './screens/MealDetailsScreen.js';
+import PancakesDetailScreen from './screens/FeaturedMealScreens/PancakesDetails.js';
+import CreamyIndianDetailScreen from './screens/FeaturedMealScreens/CreamyIndian.js';
+import AsparagusDetailScreen from './screens/FeaturedMealScreens/AsparagusDetails.js';
+import SaladDetailScreen from './screens/FeaturedMealScreens/SaladDetails.js';
 //import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +33,10 @@ const App = () => {
           <Stack.Screen options={{animation: 'fade'}} name="Prep" component={MealPrepScreen} />
           <Stack.Screen options={{animation: 'fade'}} name="Normal" component={NormalRecipeScreen} />
           <Stack.Screen options={{animation: 'fade'}} name="Overview" component={MealDetailScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Pancakes" component={PancakesDetailScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Salad with Smoked Salmon" component={SaladDetailScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Creamy Indian Chicken Curry" component={CreamyIndianDetailScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Asparagus Salad with Cherry Tomatoes" component={AsparagusDetailScreen} />
         </Stack.Navigator>
       
     </NavigationContainer>

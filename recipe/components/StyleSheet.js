@@ -6,10 +6,12 @@ const styles = StyleSheet.create({
       backgroundColor: '#ebebeb',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: 140,
+      
+
       
       //margin: 16,
     },
+    
     buttonPressed: {
       opacity: 0.5,
     },
@@ -27,11 +29,14 @@ const styles = StyleSheet.create({
       borderRadius: 0,
       alignItems: 'center',
       justifyContent: 'flex-start',
-      height: Dimensions.get('window').height * .42,
-      
+      height: Dimensions.get('window').height * .7,
+      position: 'absolute',
+      bottom: 90
       
     },
     scrollitem:{
+      
+      flexDirection: 'row',
       width:Dimensions.get('window').width * .85,
       fontSize: 25,
       padding:7,
@@ -100,6 +105,8 @@ const styles = StyleSheet.create({
       backgroundColor: '#ebebeb',
       flexDirection: 'row',
       alignItems: 'center',
+      position: 'absolute',
+      top: 80
       //justifyContent: 'center',
       //margin: 16,
     },
@@ -136,6 +143,23 @@ const styles = StyleSheet.create({
       width: 30,
       height: 30,
     },
+    removebutton: {
+      position: 'absolute',
+      right: 3,
+      padding: 10,
+      borderRadius:10,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    texto: {
+      fontSize: 13
+    },
+    removeLogo: {
+      width: 30,
+      height: 30,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
     containerSettings: {
       flex: 1,
       backgroundColor: '#ebebeb',
@@ -150,26 +174,32 @@ const styles = StyleSheet.create({
       fontSize: 10
     },
     listscrollview: {
+      flex: 1,
+      flexDirection: 'row',
       width:Dimensions.get('window').width,
       borderRadius: 0,
       alignItems: 'center',
       justifyContent: 'flex-start',
-      height: Dimensions.get('window').height -140,
+      height: Dimensions.get('window').height -20,
       
       
     },
     listscrollitem:{
+      flex: 1,
+      flexDirection: 'row',
       width:Dimensions.get('window').width * .85,
       fontSize: 25,
       padding:7,
       margin:5,
       backgroundColor: '#ffb265',
       borderRadius: 15,
+      justifyContent: 'flex-start',
     },
     listscrolltext:{
       padding:7,
       fontSize: 25,
-      
+      alignItems: 'flex-start',
+      width:Dimensions.get('window').width * .85 
     },
     containerMeals: {
       flex: 1,

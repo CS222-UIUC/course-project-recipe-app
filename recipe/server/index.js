@@ -2,8 +2,8 @@ const path = require('path');
 const express = require("express");
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const Recipe = require('/Users/patrickcunningham/Programming/recipe/recipe/models/recipe.js');
-const User = require('/Users/patrickcunningham/Programming/recipe/recipe/models/user.js');
+const Recipe = require('../models/recipe.js');
+const User = require('../models/user.js');
 const csv = require('csv-parser');
 const fs = require('fs');
 const multer = require('multer');
@@ -121,6 +121,46 @@ app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
 
+app.post('/delete/pantry', async (req, res) => {
+  const deleteIngredient = JSON.stringify(req.body).slice(2).split('"')[0].toLocaleLowerCase();
+    console.log(deleteIngredient);
+    console.log(req.body);
+    const user = await User.findById('6379434e41121f9226ba1e13');
+    var userIngredients = user.ingredients;
+    const index = userIngredients.indexOf(deleteIngredient);
+    if (index > -1) {
+      userIngredients.splice(index, 1); 
+    }
+    User.updateOne(
+            { _id: ObjectId("6379434e41121f9226ba1e13") },
+            { $set: { ingredients: userIngredients } }
+    ).then(result => {
+        updateRecipes();
+        res.redirect('/pantry');
+      }).catch(err => {
+        console.log(err);
+      })
+});
+app.post('/delete/groceries', async (req, res) => {
+  const deleteIngredient = JSON.stringify(req.body).slice(2).split('"')[0].toLocaleLowerCase();
+    console.log(deleteIngredient);
+    console.log(req.body);
+    const user = await User.findById('6379434e41121f9226ba1e13');
+    var userIngredients = user.groceries;
+    const index = userIngredients.indexOf(deleteIngredient);
+    if (index > -1) {
+      userIngredients.splice(index, 1); 
+    }
+    User.updateOne(
+            { _id: ObjectId("6379434e41121f9226ba1e13") },
+            { $set: { groceries: userIngredients } }
+    ).then(result => {
+        updateRecipes();
+        res.redirect('/pantry');
+      }).catch(err => {
+        console.log(err);
+      })
+});
 async function updateRecipes() {
 
   const user = await User.findById('6379434e41121f9226ba1e13');
@@ -141,8 +181,7 @@ async function updateRecipes() {
     });
 
     if (compare(ingredients, rIngredients) > 0) {
-      console.log(r.title);
-          goodRecipes.push([r.title, compare(ingredients, rIngredients), r._id]);
+          goodRecipes.push([r.title, compare(ingredients, rIngredients), compare(ingredients, rIngredients).toString() + "/" + rIngredients.length.toString(), r._id]);
         }
   })
 
@@ -156,4 +195,3 @@ async function updateRecipes() {
     console.log(err);
   })
 }
-

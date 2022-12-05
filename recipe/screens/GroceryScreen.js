@@ -16,15 +16,10 @@ const GroceryScreen = ({ navigation }) => {
     return (
       <View style={styles.container}>
         <View style={styles.containerHorizontal}>
-        <EditButton></EditButton>
-        <View style={styles.space}/>
-        <ShareButton></ShareButton>
-        <View style={styles.space}/>
+        <GrocerySearchBar searchText={searchText} setSearchText = {setSearchText}/>
         <ExportButton></ExportButton>
         </View>
-        <View style={{height: 40}} />
-        <GrocerySearchBar searchText={searchText} setSearchText = {setSearchText}/>
-        <View style={{height: 60}} />
+        
         <GroceryScroller></GroceryScroller>
         {menuBar(navigation)}
       </View>

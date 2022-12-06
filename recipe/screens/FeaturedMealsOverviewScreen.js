@@ -5,6 +5,7 @@ import CreamyChickenButton from '../components/FeaturedMealButtons/CreamyIndian'
 import PancakesButton from '../components/FeaturedMealButtons/Pancakes';
 import StaticMealList from '../components/StaticMealList';
 import SaladButton from '../components/FeaturedMealButtons/Salad';
+import { menuBar } from './menubar';
 const FeaturedMealsOverviewScreen = ({ navigation }) => {
     return (
         <View style={styles.FeaturedContainer}>
@@ -19,6 +20,7 @@ const FeaturedMealsOverviewScreen = ({ navigation }) => {
           <View style={{height: 20}} />
           <AsparagusSaladButton onPress={() =>
            navigation.navigate('Asparagus Salad with Cherry Tomatoes')} />
+           {menuBar(navigation)}
         </View>
     );
 }

@@ -1,10 +1,12 @@
 import { useRoute } from '@react-navigation/native';
 import { View, Text, StyleSheet } from 'react-native'
 import { styles } from '../../components/StyleSheet';
-function SaladDetailScreen() {
+import { menuBar } from '../menubar';
+const SaladDetailScreen = ({ navigation }) => {
     const route  = useRoute();
     return (
     <View style={styles.containerMeals}>
+      <View style={styles.integratedstyling}>
         <Text style = {{fontWeight: "bold"}}> Name: </Text>
         <Text> Salad with Smoked Salmon </Text>
         <View style={styles.space} />
@@ -28,6 +30,8 @@ function SaladDetailScreen() {
       'Process mustard, vinegar and olive oil into a dessing',
       'Prepare the salad',
       'Add salmon cubes and dressing'</Text>
+      </View>
+      {menuBar(navigation)}
     </View>
     );
 }

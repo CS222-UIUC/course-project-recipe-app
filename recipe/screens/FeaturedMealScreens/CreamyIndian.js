@@ -1,10 +1,12 @@
 import { useRoute } from '@react-navigation/native';
 import { View, Text, StyleSheet } from 'react-native'
 import { styles } from '../../components/StyleSheet';
-function CreamyIndianDetailScreen() {
+import { menuBar } from '../menubar';
+const CreamyIndianDetailScreen = ({ navigation }) => {
     const route  = useRoute();
     return (
     <View style={styles.containerMeals}>
+      <View style={styles.integratedstyling}>
         <Text style = {{fontWeight: "bold"}}> Name: </Text>
         <Text> Creamy Indian Chicen Curry </Text>
         <View style={styles.space} />
@@ -27,6 +29,8 @@ function CreamyIndianDetailScreen() {
       'Add chicken breast + 250ml of water and cook everything for 10 minutes',
       'Add coconut milk',
       'Serve with rice'</Text>
+      </View>
+      {menuBar(navigation)}
     </View>
     );
 }

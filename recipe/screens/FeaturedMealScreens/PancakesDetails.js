@@ -1,10 +1,12 @@
 import { useRoute } from '@react-navigation/native';
 import { View, Text, StyleSheet } from 'react-native'
 import { styles } from '../../components/StyleSheet';
-function PancakesDetailScreen() {
+import { menuBar } from '../menubar';
+const PancakesDetailScreen = ({ navigation }) => {
     const route  = useRoute();
     return (
     <View style={styles.containerMeals}>
+      <View style={styles.integratedstyling}>
         <Text style = {{fontWeight: "bold"}}> Name: </Text>
         <Text> Pancakes </Text>
         <View style={styles.space} />
@@ -26,6 +28,8 @@ function PancakesDetailScreen() {
       'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
       'Heat a lightly oiled griddle or frying pan over medium high heat.',
       'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'</Text>
+      </View>
+      {menuBar(navigation)}
     </View>
     );
 }

@@ -211,6 +211,14 @@ const styles = StyleSheet.create({
       
       //margin: 16,
     },
+    integratedstyling: {
+      //flex: 1,
+      backgroundColor:'#ffb265',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 10,
+      borderRadius: 20,
+    },
     featuredButton: {
       width:Dimensions.get('window').width * .85,
       height: 70,

@@ -1,4 +1,4 @@
-# course-project-recipe-app
+# Pantri
 course-project-recipe-app created by GitHub Classroom
 
 ## Summary

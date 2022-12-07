@@ -1,0 +1,35 @@
+<html lang="en">
+  <%- include('./partials/head.ejs') %> 
+<body>
+
+  <%- include('./partials/nav.ejs') %> 
+
+  <div class="blogs content">
+    <h2>Current Pantry</h2>
+    <% if (typeof user !== 'undefined') { %>
+      <% user.ingredients.forEach(ingredient => { %> 
+      <h3 class="title"> <%= ingredient %> </h3>
+      <form action="/delete/pantry" method="POST">
+        <input type="hidden" id="title" name="title" value="<%= ingredient %>" required>
+        <button>delete</button>
+      </form>
+
+      <% }) %>
+    <% } else { %>
+      <h3 class="title"> <%= user.title %> </h3>
+      <h2 class="title"> <%= user.length %> </h2>
+      <p>There are no users to display</p>
+    <% } %>
+  </div>
+  <div class="create-blog content">
+    <form action="/pantry" method="POST">
+      <label for="title">Ingredient:</label>
+      <input type="text" id="title" name="title" required>
+      <button>Add</button>
+    </form>
+  </div>
+  
+  <%- include('./partials/footer.ejs') %> 
+
+</body>
+</html>

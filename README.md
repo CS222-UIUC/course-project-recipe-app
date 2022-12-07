@@ -1,6 +1,9 @@
 # Pantri
 course-project-recipe-app created by GitHub Classroom
 
+## Link to Presentation:
+https://youtu.be/UXeodcCkmJk
+
 ## Summary
 
 Young and inexperienced homeowners often struggle with making food on their own, especially in the beginning. It is challenging to wean oneself off of the convenience of fast food. Our product looked to simplify and streamline mealtime for at-home chefs by curating recipes based on the contents of the user's fridge and cupboard through image processing. By processing the image, it scans the items in your pantry and adds it to the digital pantry log. From there it can gather the recipes needed for a streamlined cooking process. Our product is called Pantri. 

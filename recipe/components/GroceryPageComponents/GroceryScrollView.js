@@ -48,7 +48,7 @@ function GroceryScroller({items}) {
                             }}
                             ><Image 
                             style={styles.removeLogo}
-                            source={require('/Users/nick/Desktop/cs222/course-project-recipe-app/recipe/assets/delete.png')}
+                            source={require('/Users/crazy/Desktop/cs222/course-project-recipe-app/recipe/assets/delete.png')}
                             />
                             
                             </Pressable>

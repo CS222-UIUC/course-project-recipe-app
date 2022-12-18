@@ -8,9 +8,15 @@ import { GroceryScreen } from './screens/GroceryScreen.js';
 import { HomeScreen } from './screens/HomeScreen.js';
 import { SettingsScreen } from './screens/SettingsScreen.js';
 import { ScanScreen } from './screens/ScanScreen.js';
+import { RecipeDetailsScreen } from './screens/RecipeDetailsScreen.js';
 import FeaturedMealsOverviewScreen from './screens/FeaturedMealsOverviewScreen.js';
 import MealPrepScreen from './screens/MealPrepScreen.js';
 import NormalRecipeScreen from './screens/NormalRecipeScreen.js';
+import MealDetailScreen from './screens/MealDetailsScreen.js';
+import PancakesDetailScreen from './screens/FeaturedMealScreens/PancakesDetails.js';
+import CreamyIndianDetailScreen from './screens/FeaturedMealScreens/CreamyIndian.js';
+import AsparagusDetailScreen from './screens/FeaturedMealScreens/AsparagusDetails.js';
+import SaladDetailScreen from './screens/FeaturedMealScreens/SaladDetails.js';
 //import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createNativeStackNavigator();
@@ -25,10 +31,16 @@ const App = () => {
           <Stack.Screen options={{ headerShown: false, animation: 'fade'}}name="Grocery" component={GroceryScreen} />
          <Stack.Screen options={{ headerShown: false, animation: 'fade'}}name="Pantry" component={PantryScreen} /> 
           <Stack.Screen options={{ headerShown: false, animation: 'fade'}}name="Settings" component={SettingsScreen} />
-          <Stack.Screen name="Featured" component={FeaturedMealsOverviewScreen} /> 
-          <Stack.Screen name="Prep" component={MealPrepScreen} />
-        <Stack.Screen name="Normal" component={NormalRecipeScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Featured" component={FeaturedMealsOverviewScreen} /> 
+          <Stack.Screen options={{animation: 'fade'}} name="Prep" component={MealPrepScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Normal" component={NormalRecipeScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Overview" component={MealDetailScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Pancakes" component={PancakesDetailScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Salad with Smoked Salmon" component={SaladDetailScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Creamy Indian Chicken Curry" component={CreamyIndianDetailScreen} />
+          <Stack.Screen options={{animation: 'fade'}} name="Asparagus Salad with Cherry Tomatoes" component={AsparagusDetailScreen} /> 
         <Stack.Screen name="Scan" component={ScanScreen} />
+        <Stack.Screen name="Recipe" component={RecipeDetailsScreen} />
         </Stack.Navigator>
       
     </NavigationContainer>

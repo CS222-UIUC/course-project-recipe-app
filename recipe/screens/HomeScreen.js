@@ -11,11 +11,6 @@ function renderCategoryItem(item) {
 }
 const HomeScreen = ({ navigation }) => {
     return (
-      // <FlatList
-      //  data={CATEGORIES}
-      //   keyExtractor={(item) => item.id}
-      //    renderItem={renderCategoryItem}
-      //     />
       <View style={styles.container}>
         <FeaturedTab onPress={() =>
             navigation.navigate('Featured')}/>

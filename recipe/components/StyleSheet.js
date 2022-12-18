@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
       opacity: 0.5,
     },
     roundButton: {
-      width: 60,
-      height: 60,
+      width: 70,
+      height: 70,
       justifyContent: 'center',
       alignItems: 'center',
       padding: 10,
@@ -132,9 +132,6 @@ const styles = StyleSheet.create({
       backgroundColor: '#ffb265'
     },
     menubutton: {
-      
-      
-     
      
       paddingHorizontal: 25,
       paddingVertical: 30,
@@ -203,6 +200,34 @@ const styles = StyleSheet.create({
       fontSize: 25,
       alignItems: 'flex-start',
       width:Dimensions.get('window').width * .85 
+    },
+    containerMeals: {
+      flex: 1,
+      backgroundColor: '#ebebeb',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 10,
+      
+      
+      //margin: 16,
+    },
+    integratedstyling: {
+      //flex: 1,
+      backgroundColor:'#ffb265',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 10,
+      borderRadius: 20,
+    },
+    featuredButton: {
+      width:Dimensions.get('window').width * .85,
+      height: 70,
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding:7,
+      fontSize: 25,
+      borderRadius: 15,
+      backgroundColor: '#ffb265',
     },
   });
 

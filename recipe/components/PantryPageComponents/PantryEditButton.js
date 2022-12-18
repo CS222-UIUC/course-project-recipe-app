@@ -9,7 +9,7 @@ function PantryEditButton({children, color, onPress}) {
         onPress={onPress}
         >
             <View>
-                <Text>Edit</Text>
+                <Text style = {{fontWeight: 'bold'}} >Edit</Text>
             </View>
         </Pressable>
     </View>

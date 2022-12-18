@@ -52,9 +52,11 @@ const upload = multer({
 }) 
 
 app.get('/groceries', async (req, res) => {
-  const user = await User.findById('6379434e41121f9226ba1e13');
-  res.json(JSON.stringify(user.groceries));
+  // const user = await User.findById('6379434e41121f9226ba1e13');
+  Recipe.deleteMany({});
+  // res.json(JSON.stringify(user.groceries));
 });
+
 
 app.post('/groceries', async (req, res) => {
   var newItem = JSON.stringify(req.body).slice(2).split('"')[0].toLocaleLowerCase();
@@ -76,19 +78,32 @@ app.get('/pantry', async (req, res) => {
   res.json(JSON.stringify(user.ingredients));
 });
 
+app.get('/recipes', async (req, res) => {
+  const user = await User.findById('6379434e41121f9226ba1e13');
+  res.json(JSON.stringify(user.recipes));
+});
+
 app.post('/pantry', async (req, res) => {
-  var newIngredient = JSON.stringify(req.body).slice(2).split('"')[0].toLocaleLowerCase();
+  var newIngredient = JSON.stringify(req.body).slice(2).split('"')[0].toLocaleLowerCase().trim();
   const user = await User.findById('6379434e41121f9226ba1e13');
   var userIngredients = user.ingredients;
-  userIngredients.push(newIngredient);
+  Recipe.deleteMany({});
+  userIngredients.push(newIngredient.trim());
   User.updateOne(
           { _id: ObjectId('6379434e41121f9226ba1e13') },
           { $set: { ingredients: userIngredients } }
   ).then(result => {
-    res.json({ message: "APPLE" });
+    updateRecipes();
     }).catch(err => {
       console.log(err);
     })
+});
+
+app.get('/recipe_details/:id', async (req, res) => {
+  const id = req.params.id;
+  console.log(id)
+  const recipe = await Recipe.findById(id);
+  res.json(JSON.stringify(recipe));
 });
 
 app.post('/scan', async (req, res) => {

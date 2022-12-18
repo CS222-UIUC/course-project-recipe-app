@@ -41,7 +41,7 @@ function ScanButton({ children, color, onPress, navigation }) {
     <View style={styles.roundButton}>
         <Pressable onPress={takeImage}>
             <View>
-                <Text>Scan</Text>
+                <Text style = {{fontWeight: 'bold'}}>Scan</Text>
             </View>
         </Pressable>
     </View>

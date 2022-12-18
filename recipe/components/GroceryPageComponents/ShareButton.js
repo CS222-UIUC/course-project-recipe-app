@@ -10,7 +10,7 @@ function ShareButton({children, color, onPress}) {
         style = {({ pressed }) => [pressed ? styles.buttonPressed : null]}
         >
             <View>
-                <Text>Share</Text>
+                <Text style = {{fontWeight: 'bold'}}>Share</Text>
             </View>
         </Pressable>
     </View>
